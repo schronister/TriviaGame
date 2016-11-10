@@ -1,0 +1,98 @@
+body{
+	background-image: url("../images/background.jpeg");
+	background-size: 100%;
+	background-repeat:no-repeat;
+	font-family: 'Prociono', serif;
+}
+
+h1{
+	text-align:center;
+	color:gold;
+	font-size:3.5em;
+	font-family: 'RingbearerMedium';
+	font-weight: normal;
+  	font-style: normal;
+
+}
+
+#container{
+	margin:2% 15%;
+	background:rgba(255,255,255,0.9);
+	border-radius:30px;
+	padding:20px;
+
+}
+
+#question{
+	width:50%;
+	display:inline-block;
+}
+
+.choices{
+	padding:20px;
+	border-radius:30px;
+}
+
+.choices:hover{
+	cursor:pointer;
+	border:3px solid black;
+	box-shadow: 2px 2px 2px grey;
+
+}
+
+.correct{
+	color:rgb(11, 91, 23);
+	border:3px solid rgb(11, 91, 23);
+}
+
+.wrong{
+	color:rgb(124, 11, 11);
+	border:3px solid rgb(124, 11, 11);
+}
+
+#imageArea{
+	margin-top:5%;
+	float:right;
+	padding:10px;
+	width:45%;
+	display:inline-block;
+	text-align:center;
+	font-weight:bolder;
+}
+
+img{
+	width:100%;
+}
+.loadMessage{
+	text-align:center;
+}
+
+#rankImg{
+	height:250px;
+	width:auto;
+}
+
+.clear {
+    clear:both;
+    line-height:0;
+}
+
+h2{
+	font-size: 2.5em;
+	margin-bottom: 5px;
+	margin-top:10px;
+	font-family: 'RingbearerMedium';
+	font-weight: normal;
+  	font-style: normal;
+}
+
+#finalScore{
+	text-align: center;
+}
+
+@font-face {
+  font-family: 'RingbearerMedium';
+  src: url('RingbearerMedium.eot?#iefix') format('embedded-opentype'),  url('RingbearerMedium.woff') format('woff'), url('RingbearerMedium.ttf')  format('truetype'), url('RingbearerMedium.svg#RingbearerMedium') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
