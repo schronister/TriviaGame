@@ -1,8 +1,14 @@
 body{
 	background-image: url("../images/background.jpeg");
-	background-size: 100%;
+	background-size: 100% 100%;
+	background-position: center;
 	background-repeat:no-repeat;
 	font-family: 'Prociono', serif;
+	margin:0px;
+}
+html, 
+body {
+    height: 100%;
 }
 
 h1{
@@ -12,6 +18,9 @@ h1{
 	font-family: 'RingbearerMedium';
 	font-weight: normal;
   	font-style: normal;
+  	padding-top:20px;
+  	margin-top:0px;
+  	margin-bottom:30px;
 
 }
 
@@ -29,8 +38,11 @@ h1{
 }
 
 .choices{
+	text-align:center;
+	font-weight:bold;
 	padding:20px;
 	border-radius:30px;
+	border:1px solid black;
 }
 
 .choices:hover{
@@ -44,8 +56,17 @@ h1{
 	color:rgb(11, 91, 23);
 	border:3px solid rgb(11, 91, 23);
 }
+.correct:hover{
+	color:rgb(11, 91, 23);
+	border:3px solid rgb(11, 91, 23);
+}
 
 .wrong{
+	color:rgb(124, 11, 11);
+	border:3px solid rgb(124, 11, 11);
+}
+
+.wrong:hover{
 	color:rgb(124, 11, 11);
 	border:3px solid rgb(124, 11, 11);
 }
@@ -84,6 +105,10 @@ h2{
 	font-family: 'RingbearerMedium';
 	font-weight: normal;
   	font-style: normal;
+}
+
+h3{
+	margin:15px 0px;
 }
 
 #finalScore{

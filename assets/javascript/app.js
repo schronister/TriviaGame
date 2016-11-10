@@ -32,7 +32,7 @@ var questions = [
 	"choices": ["Barad-dur", "Edoras", "Minas Tirith", "Osgiliath"],
 	"keys":[1,2,3,4],
 	"answer": 4,
-	"image": "http://68.media.tumblr.com/2d9ff20dee30cea21178989083ae22b8/tumblr_oefcntFnns1rlumxjo2_540.gif"
+	"image": "http://67.media.tumblr.com/93a4d2edd3e81b729d74653029000b54/tumblr_of7rgm8bbz1vsvl4bo3_r1_400.gif"
 	},
 	{"id": 6,
 	"text":"The Fellowship finds the tomb of what Dwarf while in Moria?",
@@ -117,11 +117,11 @@ function loadQuestion(){
 
 
 };
-
+//running the timer
 function runGameTimer(){
 	interval = setInterval(decrement,1000);
 }
-
+//function for decrementing the timer
 function decrement(){
 	timer--;
 	$("#timer").html("Time Left: " +timer);
@@ -133,11 +133,11 @@ function decrement(){
 		transition();
 	}
 }
-
+//function for stopping the timer
 function stopTimer(){
 	clearInterval(interval);
 }
-
+//highlight the right and wrong answers
 function highlightAnswers(){
 	for (var i= 1; i <=questions[questionCounter].choices.length; i++){
 		if (questions[questionCounter].keys[i-1] === questions[questionCounter].answer){
@@ -148,8 +148,11 @@ function highlightAnswers(){
 	}
 }
 
+//function to transition slides (shows gif and counts down)
 function transition(){
+	//remove listener on choices
 	$(".choices").off("click");
+	//add message and image
 	$("#playingArea").append("<div id='imageArea'></div");
 	if (lastOneRight === true){
 		$("#imageArea").append("<p>Correct! The answer was "+ questions[questionCounter].choices[questions[questionCounter].answer-1]+".");
@@ -158,11 +161,12 @@ function transition(){
 	}
 	$("#imageArea").append("<img src='"+ questions[questionCounter].image + "'>");
 	questionCounter++;
-
+	//if there are more questions, prepare to load the next
 	if(questionCounter <questions.length){
 		$("#imageArea").append("<p class='loadMessage'>Next question is loading...</p>");
-		setTimeout(loadQuestion,6000);
+		setTimeout(loadQuestion,5000);
 	} else{
+		//if out of questions, proceed to gameOver function
 		$("#imageArea").append("<p class='loadMessage'>Calculating your final score...</p>");
 		setTimeout(gameOver,5000);
 	}
@@ -170,15 +174,16 @@ function transition(){
 
 
 }
-
+//showing the final score and rank
 function gameOver(){
+	//get rid of timer
 	$("#timer").empty();
 	$("#playingArea").empty();
 	$("#playingArea").append("<div id= 'finalScore'></div>");
 	$("#finalScore").append("<h2>Final Score</h2>");
-	$("#finalScore").append("<h3>Correct Answers: " + correctAnswers + "</h3>");
-	$("#finalScore").append("<h3>Incorrect Answers: " + incorrectAnswers + "</h3>");
-
+	//display score
+	$("#finalScore").append("<h3>You answered " + correctAnswers + "/" + incorrectAnswers +" questions correctly.</h3>");
+	//calculate a rank
 	if (correctAnswers === questions.length){
 		rank = "Wizard";
 		rankImg = "http://vignette2.wikia.nocookie.net/lotr/images/e/e7/Gandalf_the_Grey.jpg/revision/latest?cb=20121110131754"
@@ -198,4 +203,16 @@ function gameOver(){
 	$("#finalScore").append("<h3>Your rank is: "+ rank + "</h3>");
 	$("#finalScore").append("<img id = 'rankImg' src='" + rankImg + "'>");
 
+
+	//play again button
+	$("#finalScore").append("<br>");
+	$("#finalScore").append("<p>Want to play again?</p>");
+	$("#finalScore").append("<button id='playAgain'>Play Again</button>");
+	$("#playAgain").on("click",function(){
+		//reset variables
+		questionCounter = 0;
+		correctAnswers = 0;
+		incorrectAnswers = 0;
+		loadQuestion();
+	})
 }
