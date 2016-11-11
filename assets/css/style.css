@@ -20,12 +20,12 @@ h1{
   	font-style: normal;
   	padding-top:20px;
   	margin-top:0px;
-  	margin-bottom:30px;
+  	margin-bottom:15px;
 
 }
 
 #container{
-	margin:2% 15%;
+	margin:0px 15% 2% 15%;
 	background:rgba(255,255,255,0.9);
 	border-radius:30px;
 	padding:20px;

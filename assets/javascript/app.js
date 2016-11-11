@@ -35,26 +35,42 @@ var questions = [
 	"image": "http://67.media.tumblr.com/93a4d2edd3e81b729d74653029000b54/tumblr_of7rgm8bbz1vsvl4bo3_r1_400.gif"
 	},
 	{"id": 6,
+	"text":"How many rings of power were forged by the elven-smiths of Eregion?",
+	"choices": ["15", "17", "19", "20"],
+	"keys":[1,2,3,4],
+	"answer": 3,
+	"image": "http://68.media.tumblr.com/310118297a4ca01f91da587ee6e12765/tumblr_o3qnl78ppi1txe091o3_r1_400.gif"
+	},
+	{"id": 7,
 	"text":"The Fellowship finds the tomb of what Dwarf while in Moria?",
 	"choices": ["Balin", "Dwalin", "Thorin", "Gimli"],
 	"keys":[1,2,3,4],
 	"answer": 1,
 	"image": "http://68.media.tumblr.com/41660602a1f16155418305ebf4ca6c90/tumblr_n8wz1ajQY11qblbqbo6_250.gif"
 	},
-	{"id": 7,
+	{"id": 8,
 	"text":"Which of these is a meal that hobbits do not partake in daily?",
 	"choices": ["Second Breakfast", "Dinner", "Supper", "Third Breakfast"],
 	"keys":[1,2,3,4],
 	"answer": 4,
 	"image": "http://68.media.tumblr.com/c99c1ebf521f8d84539e446b1a7b1c85/tumblr_nrzygin3PA1siyog0o10_r1_250.gif"
 	},
-	{"id": 8,
+	{"id": 9,
 	"text":"What's the name of Gandalf's horse?",
 	"choices": ["Brego", "Shadowfax", "Silver", "Arnold"],
 	"keys":[1,2,3,4],
 	"answer": 2,
 	"image": "http://68.media.tumblr.com/11e90b62fecb6fe3476811879889ed78/tumblr_o3b2znmC2S1rrecxqo3_500.gif"
+	},
+	{"id": 10,
+	"text":"How old is Aragorn in the movie trilogy?",
+	"choices": ["18", "78", "83", "87"],
+	"keys":[1,2,3,4],
+	"answer": 4,
+	"image": "http://68.media.tumblr.com/f954560e74974bd7273d26b047888131/tumblr_of1oh3EAfo1ru8yv8o8_500.gif"
 	}
+	
+
 ]
 var questionCounter = 0;
 var correctAnswers = 0;
@@ -182,7 +198,7 @@ function gameOver(){
 	$("#playingArea").append("<div id= 'finalScore'></div>");
 	$("#finalScore").append("<h2>Final Score</h2>");
 	//display score
-	$("#finalScore").append("<h3>You answered " + correctAnswers + "/" + incorrectAnswers +" questions correctly.</h3>");
+	$("#finalScore").append("<h3>You answered " + correctAnswers + "/" + questions.length +" questions correctly.</h3>");
 	//calculate a rank
 	if (correctAnswers === questions.length){
 		rank = "Wizard";
